@@ -12,6 +12,45 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+devtools::load_all()
+```
+
+## Overview
+The cleanr package provides a small set of helper functions for common data cleaning tasks. This vignette demonstrates a basic workflow using the functions currently available in the package
+
+## Example data
+
+```{r}
+df <- data.frame(
+  id = 1:10,
+  height = c(120, 135, NA, 172, 180, 156, 192, 140, NA, 160),
+  weight = c(58, 65, 73, 80, 78, 91, 96, 88, 85, NA),
+  group = c("A", "B", "B", "A",  "A", "B", "B", "A", NA, "B")
+)
+df
+```
+## Functions
+
+## Scaling numeric variables
+
+The scale_numeric() function standardises numeric variables using z-scores
+
+```{r}
+scale_numeric(df)
+```
+
+If you do not wish to scale the id column, you can choose which columns you want to scale using cols
+
+```{r}
+scale_numeric(df, cols = c("height", "weight"))
+```
+
+## Detecting outliers
+The detect_outliers() function identifies potential outliers in a numeric vector using the interquartile range rule
+
+```{r}
+detect_outliers(df$weight)
 ```
 
 
