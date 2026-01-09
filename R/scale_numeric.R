@@ -18,10 +18,11 @@
 #' scale_numeric(df, cols = "b")
 #'
 #' @export
-scale_numeric <- function(x, cols = NULL, na.rm = TRUE) {
+scale_numeric <- function(x, cols = NULL, na.rm = TRUE, ...) {
   UseMethod("scale_numeric")
 }
 
+#' @method scale_numeric numeric
 #' @export
 scale_numeric.numeric <- function(x, na.rm = TRUE, ...) {
   m <- mean(x, na.rm = na.rm)
@@ -32,16 +33,20 @@ scale_numeric.numeric <- function(x, na.rm = TRUE, ...) {
   (x - m) / s
 }
 
+#' @method scale_numeric data.frame
 #' @export
 scale_numeric.data.frame <- function(x, cols = NULL, na.rm = TRUE, ...) {
   if (is.null(cols)) {
     cols <- which(vapply(x, is.numeric, logical(1)))
+  } else if (is.character(cols)) {
+    cols <- match(cols, names(x))
   }
 
+  cols <- cols[!is.na(cols)]
 
-  for (nm in cols) {
-    if (is.numeric(x[[nm]])) {
-      x[[nm]] <- scale_numeric(x[[nm]], na.rm = na.rm)
+  for (i in cols) {
+    if (is.numeric(x[[i]])) {
+      x[[i]] <- scale_numeric(x[[i]], na.rm = na.rm)
     }
   }
 

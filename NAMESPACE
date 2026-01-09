@@ -1,1 +1,4 @@
+S3method(scale_numeric, numeric)
+S3method(scale_numeric, data.frame)
+
 exportPattern("^[[:alpha:]]+")
