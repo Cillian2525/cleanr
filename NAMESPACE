@@ -1,4 +1,5 @@
 S3method(scale_numeric, numeric)
 S3method(scale_numeric, data.frame)
+S3method(summary_table, data.frame)
 
 exportPattern("^[[:alpha:]]+")

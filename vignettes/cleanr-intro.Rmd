@@ -53,4 +53,16 @@ The detect_outliers() function identifies potential outliers in a numeric vector
 detect_outliers(df$weight)
 ```
 
+## Summary tables
+
+The summary_table() function creates a summary table for variables in a data frame. For numeric variables it computes mean, sd, and quantiles. For categorical variables it reports counts and proportions by level
+
+```{r}
+summary_table(df)
+```
+## Removing missing values
+
+The remove_missing() function removes observations with missing values from a data frame
+
+
 
