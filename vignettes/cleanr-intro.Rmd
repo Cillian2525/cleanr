@@ -64,5 +64,8 @@ summary_table(df)
 
 The remove_missing() function removes observations with missing values from a data frame
 
+```{r}
+remove_missing(df)
+```
 
 
