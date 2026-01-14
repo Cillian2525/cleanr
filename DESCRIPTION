@@ -3,12 +3,11 @@ Type: Package
 Title: What the Package Does (Title Case)
 Version: 0.1.0
 Authors@R: c(
-    person(
-      "Jane", "Doe",
-      email = "jane@example.com",
-      role = c("aut", "cre")
+    person("Cillian James", "Hegarty", email = "CILLIAN.HEGARTY.2023@mumail.ie", role = c("aut", "cre")),
+    person("Ben Kevin", "Kinsella", email = "BEN.KINSELLA.2023@mumail.ie", role = c("aut", "cre")),
+    person("Jayme Philip", "Lambe", email = "JAYME.LAMBE.2023@mumail.ie", role = c("aut", "cre")),
+    person("Miquel", "Mascaró Sánchez", email = "MIQUEL.MASCAROSANCHEZ.2026@mumail.ie", role = c("aut", "cre"))
     )
-  )
 Description: More about what it does (maybe more than one line).
     Continuation lines should be indented.
 License: What license is it under?
