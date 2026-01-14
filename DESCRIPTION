@@ -8,11 +8,13 @@ Authors@R: c(
     person("Jayme Philip", "Lambe", email = "JAYME.LAMBE.2023@mumail.ie", role = c("aut", "cre")),
     person("Miquel", "Mascaró Sánchez", email = "MIQUEL.MASCAROSANCHEZ.2026@mumail.ie", role = c("aut", "cre"))
     )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: This R package provides four main functions to help clean and explore data. With these functions, users can detect outliers in numeric data, 
+             remove rows with missing values, normalize numeric variables using z-scores and create clear summary tables for both numeric and categorical data.
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
+Depends: R (>= 4.5.0)
+BugReports:
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
