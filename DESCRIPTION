@@ -16,6 +16,6 @@ LazyData: true
 Depends: R (>= 4.2.0)
 Imports: tibble
 Suggests: testthat (>= 3.0.0)
-URL:
+URL: https://github.com/Cillian2525/cleanr
 BugReports:
 RoxygenNote: 7.3.3
