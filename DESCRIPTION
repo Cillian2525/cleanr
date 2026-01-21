@@ -1,5 +1,6 @@
 Package: cleanr
 Type: Package
+<<<<<<< HEAD
 Title: Data Cleaning Tools
 Version: 0.1.0
 Authors@R: c(
@@ -21,4 +22,24 @@ Suggests:
     rmarkdown
 VignetteBuilder: knitr
 Config/testthat/edition: 3
+=======
+Title: Data cleaning, exploration and summary
+Version: 0.1.0
+Authors@R: c(
+    person("Cillian James", "Hegarty", email = "CILLIAN.HEGARTY.2023@mumail.ie", role = c("aut", "cre")),
+    person("Ben Kevin", "Kinsella", email = "BEN.KINSELLA.2023@mumail.ie", role = c("aut", "cre")),
+    person("Jayme Philip", "Lambe", email = "JAYME.LAMBE.2023@mumail.ie", role = c("aut", "cre")),
+    person("Miquel", "Mascaró Sánchez", email = "MIQUEL.MASCAROSANCHEZ.2026@mumail.ie", role = c("aut", "cre"))
+    )
+Description: This R package provides four main functions to help clean and explore data. With these functions, users can detect outliers in numeric data, 
+             remove rows with missing values, normalize numeric variables using z-scores and create clear summary tables for both numeric and categorical data.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.2.0)
+Imports: tibble
+Suggests: testthat (>= 3.0.0)
+URL: https://github.com/Cillian2525/cleanr
+BugReports: https://github.com/Cillian2525/cleanr/issues
+>>>>>>> f2fb50e0f0acaff69a53bf39918c480a650785a2
 RoxygenNote: 7.3.3

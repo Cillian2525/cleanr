@@ -1,10 +1,20 @@
 #' Detect outliers in numeric data
 #'
-#' Detects outliers using a simple statistical rule.
+#' Identify outliers in a numeric vector using the interquartile range (IQR) rule.
+#' Observations lying below Q1 − 1.5 × IQR or above Q3 + 1.5 × IQR are
+#' classified as outliers.
 #'
 #' @param x A numeric vector.
 #'
-#' @return A logical vector indicating outliers.
+#' @return A logical vector of the same length as \code{x}, indicating
+#'   which observations are classified as outliers.
+#'
+#' @examples
+#' detect_outliers(c(1, 2, 3, 4, 100))
+#'
+#' x <- c(5, 6, 7, 8, NA, 50)
+#' detect_outliers(x)
+#'
 #' @export
 detect_outliers <- function(x) {
   stopifnot(is.numeric(x))
@@ -23,4 +33,3 @@ detect_outliers <- function(x) {
 
   x < lower | x > upper
 }
-

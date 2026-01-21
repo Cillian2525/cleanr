@@ -10,8 +10,18 @@ detect_outliers(x)
 \item{x}{A numeric vector.}
 }
 \value{
-A logical vector indicating outliers.
+A logical vector of the same length as \code{x}, indicating
+  which observations are classified as outliers.
 }
 \description{
-Detects outliers using a simple statistical rule.
+Identify outliers in a numeric vector using the interquartile range (IQR) rule.
+Observations lying below Q1 − 1.5 × IQR or above Q3 + 1.5 × IQR are
+classified as outliers.
+}
+\examples{
+detect_outliers(c(1, 2, 3, 4, 100))
+
+x <- c(5, 6, 7, 8, NA, 50)
+detect_outliers(x)
+
 }

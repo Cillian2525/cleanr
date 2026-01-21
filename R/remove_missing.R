@@ -33,6 +33,7 @@ remove_missing <- function(x, cols = NULL) {
 }
 
 #' @rdname remove_missing
+#' @method remove_missing data.frame
 #' @export
 remove_missing.data.frame <- function(x, cols = NULL) {
   if (is.null(cols)) {
