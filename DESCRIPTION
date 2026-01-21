@@ -1,20 +1,24 @@
 Package: cleanr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Data Cleaning Tools
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Jayme", "Lambe",
+      email = "jayme.lambe.2023@mumail.ie",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: A small collection of helper functions for common data cleaning
+    tasks including scaling numeric cariables, detecting outliers, removing 
+    missing values and creating summary tables.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
 Config/testthat/edition: 3
 RoxygenNote: 7.3.3

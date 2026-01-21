@@ -2,9 +2,15 @@
 % Please edit documentation in R/scale_numeric.R
 \name{scale_numeric}
 \alias{scale_numeric}
+\alias{scale_numeric.numeric}
+\alias{scale_numeric.data.frame}
 \title{Scale numeric variables}
 \usage{
 scale_numeric(x, cols = NULL, na.rm = TRUE, ...)
+
+\method{scale_numeric}{numeric}(x, cols = NULL, na.rm = TRUE, ...)
+
+\method{scale_numeric}{data.frame}(x, cols = NULL, na.rm = TRUE, ...)
 }
 \arguments{
 \item{x}{A numeric vector or a data frame.}
@@ -13,6 +19,8 @@ scale_numeric(x, cols = NULL, na.rm = TRUE, ...)
 If NULL, all numeric columns are scaled.}
 
 \item{na.rm}{Logical; if TRUE, ignore missing values when computing mean/sd.}
+
+\item{...}{Additional arguments passed to methods.}
 }
 \value{
 A scaled numeric vector, or a data frame with scaled numeric columns.

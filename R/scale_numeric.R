@@ -7,6 +7,7 @@
 #' @param cols For data frames: columns to scale (character names or indices).
 #'   If NULL, all numeric columns are scaled.
 #' @param na.rm Logical; if TRUE, ignore missing values when computing mean/sd.
+#' @param ... Additional arguments passed to methods.
 #'
 #' @return A scaled numeric vector, or a data frame with scaled numeric columns.
 #'
@@ -22,9 +23,9 @@ scale_numeric <- function(x, cols = NULL, na.rm = TRUE, ...) {
   UseMethod("scale_numeric")
 }
 
-#' @method scale_numeric numeric
+#' @rdname scale_numeric
 #' @export
-scale_numeric.numeric <- function(x, na.rm = TRUE, ...) {
+scale_numeric.numeric <- function(x,cols = NULL, na.rm = TRUE, ...) {
   m <- mean(x, na.rm = na.rm)
   s <- stats::sd(x, na.rm = na.rm)
 
@@ -33,11 +34,11 @@ scale_numeric.numeric <- function(x, na.rm = TRUE, ...) {
   (x - m) / s
 }
 
-#' @method scale_numeric data.frame
+#' @rdname scale_numeric
 #' @export
 scale_numeric.data.frame <- function(x, cols = NULL, na.rm = TRUE, ...) {
   if (is.null(cols)) {
-    cols <- which(vapply(x, is.numeric, logical(1)))
+    cols <- which(sapply(x, is.numeric))
   } else if (is.character(cols)) {
     cols <- match(cols, names(x))
   }
