@@ -17,7 +17,7 @@ Depends: R (>= 4.2.0)
 Imports: tibble
 Suggests: testthat (>= 3.0.0),
     knitr,
-    markdown
+    rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/Cillian2525/cleanr
 BugReports: https://github.com/Cillian2525/cleanr/issues
