@@ -2,9 +2,12 @@
 % Please edit documentation in R/summary_table.R
 \name{summary_table}
 \alias{summary_table}
+\alias{summary_table.data.frame}
 \title{Summarize variables in a data frame.}
 \usage{
-summary_table(x, cols = NULL, na.rm = TRUE)
+summary_table(x, cols = NULL, na.rm = TRUE, ...)
+
+\method{summary_table}{data.frame}(x, cols = NULL, na.rm = TRUE, ...)
 }
 \arguments{
 \item{x}{A data frame.}
@@ -13,6 +16,8 @@ summary_table(x, cols = NULL, na.rm = TRUE)
 If NULL, all columns are summarized.}
 
 \item{na.rm}{Logical; if TRUE, ignore missing values when computing summaries.}
+
+\item{...}{Additional arguments passed to methods.}
 }
 \value{
 A tidy summary table (tibble) of variables.
@@ -23,7 +28,8 @@ For numeric variables, computes mean, sd and quantiles.
 For categorical variables, reports counts and proportions by level.
 }
 \examples{
-df <- data.frame(a = c("A", "B", "C"), b = c(1, 5, 10, 20, 50), c = c("S", "M", "L", "XL"))
+df <- data.frame(a = c("A", "B", "C", "D", "E"),
+b = c(1, 5, 10, 20, 50), c = c("XS", "S", "M", "L", "XL"))
 summary_table(df)
 summary_table(df, cols = c("a", "b"))
 

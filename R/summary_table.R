@@ -8,11 +8,13 @@
 #' @param cols For data frames: columns to summarize (character names or indices).
 #'   If NULL, all columns are summarized.
 #' @param na.rm Logical; if TRUE, ignore missing values when computing summaries.
+#' @param ... Additional arguments passed to methods.
 #'
 #' @return A tidy summary table (tibble) of variables.
 #'
 #' @examples
-#' df <- data.frame(a = c("A", "B", "C", "D", "E"), b = c(1, 5, 10, 20, 50), c = c("XS", "S", "M", "L", "XL"))
+#' df <- data.frame(a = c("A", "B", "C", "D", "E"),
+#' b = c(1, 5, 10, 20, 50), c = c("XS", "S", "M", "L", "XL"))
 #' summary_table(df)
 #' summary_table(df, cols = c("a", "b"))
 #'
@@ -21,6 +23,7 @@ summary_table <- function(x, cols = NULL, na.rm = TRUE, ...){
   UseMethod("summary_table")
 }
 
+#' @rdname summary_table
 #' @export
 summary_table.data.frame <- function(x, cols = NULL, na.rm = TRUE, ...){
   if (!is.null(cols)) {
