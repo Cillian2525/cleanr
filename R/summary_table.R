@@ -12,13 +12,12 @@
 #' @return A tidy summary table (tibble) of variables.
 #'
 #' @examples
-#' df <- data.frame(a = c("A", "B", "C"), b = c(1, 5, 10, 20, 50), c = c("S", "M", "L", "XL"))
+#' df <- data.frame(a = c("A", "B", "C", "D", "E"), b = c(1, 5, 10, 20, 50), c = c("XS", "S", "M", "L", "XL"))
 #' summary_table(df)
 #' summary_table(df, cols = c("a", "b"))
 #'
 #' @export
-summary_table <- function(x, cols = NULL, na.rm = TRUE){
-  stopifnot(is.data.frame(x))
+summary_table <- function(x, cols = NULL, na.rm = TRUE, ...){
   UseMethod("summary_table")
 }
 
@@ -29,7 +28,7 @@ summary_table.data.frame <- function(x, cols = NULL, na.rm = TRUE, ...){
       cols <- match(cols, names(x))
     }
     cols <- cols[!is.na(cols)]
-    x <- x[cols]
+    x <- x[, cols, drop = FALSE]
   }
 
   num_out <- lapply(names(x), function(nm) {
